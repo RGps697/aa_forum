@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>app/controllers/UserCtrl.class.php</url>
+            <bookmark id="1">
+                <name/>
+                <line>75</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/Messages.class.php</file>
-            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/config.php</file>
-            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/routing.php</file>
-            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/ctrl.php</file>
-            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/ParamUtils.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/App.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/UserCreation.tpl</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/Utils.class.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/UserList.tpl</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/init.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/controllers/UserCtrl.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/database.php</file>
-            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/forms/UserForm.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/templates/mainPage.tpl</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/routing.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/ParamUtils.class.php</file>
         </group>
     </open-files>
 </project-private>

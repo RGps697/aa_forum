@@ -9,6 +9,15 @@
     
 <body>
     
+<div class="pure-menu pure-menu-horizontal bottom-margin">
+	<a href="{$conf->action_root}listUsers" class="pure-menu-heading pure-menu-link">Lista</a>
+        <a href="{$conf->action_root}addUserDisplay" class="pure-menu-heading pure-menu-link">Dodaj użytkownika</a>
+{if count($conf->roles)>0}
+	<a href="{$conf->action_root}logout" class="pure-menu-heading pure-menu-link">Wyloguj</a>
+{else}	
+	<a href="{$conf->action_root}loginShow" class="pure-menu-heading pure-menu-link">Zaloguj</a>
+{/if}
+</div>
     
     {block name=content} Domyślna treść zawartości .... {/block}
     

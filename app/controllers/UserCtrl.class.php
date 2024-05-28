@@ -11,6 +11,7 @@ use app\forms\UserForm;
 class UserCtrl {
     
     private $form;
+    private $accounts;
     
     public function __construct(){
         
@@ -19,7 +20,6 @@ class UserCtrl {
     }
     
     function validateUser(){
-        //$this->form->id = ParamUtils::getFromRequest('id',true,'Błędne wywołanie aplikacji id');
         $this->form->name = ParamUtils::getFromRequest('name',true,'Błędne wywołanie aplikacji');
         $this->form->surname = ParamUtils::getFromRequest('surname',true,'Błędne wywołanie aplikacji');
         $this->form->login = ParamUtils::getFromRequest('login',true,'Błędne wywołanie aplikacji');
@@ -47,11 +47,33 @@ class UserCtrl {
         return ! App::getMessages()->isError();
     }
     
+    
+    public function action_addUserDisplay(){
+        
+            //UPRAWNIENIA ADMINISTRATORA
+        
+        $this->form = new UserForm();
+        
+        $this->form->id = "";
+        $this->form->name = "";
+        $this->form->surname = "";
+        $this->form->login = "";
+        $this->form->role = "";
+
+        App::getSmarty()->assign('form', $this->form);
+       
+       App::getSmarty()->display('UserCreation.tpl');
+       
+  
+    }
+    
+    
     public function action_addUser(){
+        
+            //UPRAWNIENIA ADMINISTRATORA
         
        if ($this->validateUser()){
            
-           //DODAĆ WALIDACJĘ DODAWANIA ROLI
            
            try{
                $role = "user";
@@ -60,28 +82,125 @@ class UserCtrl {
                    $role = "admin";
                }
                
-               App::getDB()->insert("account", [
-                "first_name" => $this->form->name,
-                "last_name" => $this->form->surname,
-                "login" => $this->form->login,
-                "password" => $this->form->password,
-                "role" => $role
-               ]);
                
-		Utils::addInfoMessage('Pomyślnie zapisano rekord');
+               if ($this->form->id == '') {
                
+                App::getDB()->insert("account", [
+                    "first_name" => $this->form->name,
+                    "last_name" => $this->form->surname,
+                    "login" => $this->form->login,
+                    "password" => $this->form->password,
+                    "role" => $role
+                ]);
+               
+                Utils::addInfoMessage('Udane zapisanie rekordu');
+                
+               }
+               else{
+                App::getDB()->update("person", [
+                     "first_name" => $this->form->name,
+                     "last_name" => $this->form->surname,
+                     "login" => $this->form->login,
+                     "password" => $this->form->password,
+                     "role" => $role
+                         ], [
+                     "id" => $this->form->id
+                 ]);
+                Utils::addInfoMessage('Udane edytowanie rekordu');
+               }
+               
+               App::getRouter()->forwardTo('listUsers');
+                
            } catch (Exception $ex) {
 
            }
            
        }
+       else{
+       
+        App::getSmarty()->assign('form', $this->form);
+        App::getSmarty()->display('UserCreation.tpl');
         
-       App::getSmarty()->display('UserCreation.tpl');
+       }
+    }
+    
+    
+    public function action_listUsers(){
+            //UPRAWNIENIA ADMINISTRATORA
+        
+        try {
+            $this->accounts = App::getDB()->select("account", [
+                    "id",
+                    "first_name",
+                    "last_name",
+                    "login",
+                    "role"
+                ]);
+        } catch (\PDOException $e) {
+            Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
+            if (App::getConf()->debug)
+                Utils::addErrorMessage($e->getMessage());
+        }
+        
+        App::getSmarty()->assign('accounts', $this->accounts);
+        
+        App::getSmarty()->display('UserList.tpl');
+    }
+    
+    function validateEdit() {
+        $this->form->id = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
+        return !App::getMessages()->isError();
+    }
+    
+    public function action_editUserDisplay(){
+            //UPRAWNIENIA ADMINISTRATORA
+        
+        if ($this->validateEdit()) {
+            
+            
+            try {
+                
+                $record = App::getDB()->get("account", "*", [
+                    "id" => $this->form->id
+                ]);
+                
+                $this->form->id = $record['id'];
+                $this->form->name = $record['first_name'];
+                $this->form->surname = $record['last_name'];
+                $this->form->login = $record['login'];
+                $this->form->role = $record['role'];
+                
+                App::getSmarty()->assign('form', $this->form);
+                App::getSmarty()->display('UserCreation.tpl');
+       
+            } catch (\PDOException $e) {
+                Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
+                if (App::getConf()->debug)
+                    Utils::addErrorMessage($e->getMessage());
+            }
+        }
         
     }
     
-    public function action_addUserDisplay(){
+    public function action_deleteUser(){
         
-       App::getSmarty()->display('UserCreation.tpl');
+            //UPRAWNIENIA ADMINISTRATORA
+        if ($this->validateEdit()) {
+
+            try {
+                // 2. usunięcie rekordu
+                App::getDB()->delete("account", [
+                    "id" => $this->form->id
+                ]);
+                Utils::addInfoMessage('Udane usunięcie rekordu');
+            } catch (\PDOException $e) {
+                Utils::addErrorMessage('Wystąpił błąd podczas usuwania rekordu');
+            if (App::getConf()->debug)
+                Utils::addErrorMessage($e->getMessage());
+            }
+        }
+
+        // 3. Przekierowanie na stronę listy osób
+        App::getRouter()->forwardTo('listUsers');
     }
 }

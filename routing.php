@@ -8,7 +8,10 @@ App::getRouter()->setDefaultRoute('addUserDisplay'); #default action
 
 Utils::addRoute('addUserDisplay', 'UserCtrl');
 Utils::addRoute('addUser', 'UserCtrl');
-//Utils::addRoute('listUsers', 'UserCtrl');
+Utils::addRoute('listUsers', 'UserCtrl');
+Utils::addRoute('editUserDisplay', 'UserCtrl');
+Utils::addRoute('editUser', 'UserCtrl');
+Utils::addRoute('deleteUser', 'UserCtrl');
 //Utils::addRoute('addPost', 'ForumCtrl');
 //Utils::addRoute('action_name', 'controller_class_name');
 
