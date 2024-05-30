@@ -59,3 +59,24 @@ App::getDB()->create("post", [
   ]
 ]);
 */
+
+App::getDB()->create("comment", [
+  "id" => [
+    "INT",
+    "NOT NULL",
+    "AUTO_INCREMENT",
+    "PRIMARY KEY"
+  ],
+  "contents" => [
+          "VARCHAR(500)",
+          "NOT NULL"
+  ],
+  "post_id" => [
+    "INT",
+    "NOT NULL"
+  ],
+  "author_id" => [
+    "INT",
+    "NOT NULL"
+  ]
+]);

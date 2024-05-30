@@ -18,6 +18,7 @@ Utils::addRoute('listPosts', 'ForumCtrl');
 Utils::addRoute('editPostDisplay', 'ForumCtrl');
 Utils::addRoute('editPost', 'ForumCtrl');
 Utils::addRoute('viewPost', 'ForumCtrl');
+Utils::addRoute('addComment', 'CommentCtrl');
 //Utils::addRoute('action_name', 'controller_class_name');
 
 //

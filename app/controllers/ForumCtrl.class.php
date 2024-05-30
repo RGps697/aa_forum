@@ -13,6 +13,7 @@ class ForumCtrl {
     
     private $form;
     private $posts;
+    private $comments;
     
     public function __construct(){
         
@@ -152,6 +153,14 @@ class ForumCtrl {
                 $this->form->id = $record['id'];
                 $this->form->title = $record['title'];
                 $this->form->contents = $record['contents'];
+                
+                $this->comments = App::getDB()->select("comment", [
+                    "contents"
+                ],[
+                     "post_id" => $this->form->id
+                 ]
+                );
+                
             }
             catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
@@ -160,6 +169,7 @@ class ForumCtrl {
             }
 
             App::getSmarty()->assign('form', $this->form);
+            App::getSmarty()->assign('comments', $this->comments);
             App::getSmarty()->display('ViewPost.tpl');
         }
     }
