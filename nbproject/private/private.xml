@@ -12,16 +12,20 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/UserList.tpl</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/forms/ForumForm.class.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/routing.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/ParamUtils.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/App.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/UserCreation.tpl</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/Utils.class.php</file>
-            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/UserList.tpl</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/init.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/controllers/UserCtrl.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/database.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/controllers/ForumCtrl.class.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/forms/UserForm.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/templates/mainPage.tpl</file>
-            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/routing.php</file>
-            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/ParamUtils.class.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/PostCreation.tpl</file>
         </group>
     </open-files>
 </project-private>

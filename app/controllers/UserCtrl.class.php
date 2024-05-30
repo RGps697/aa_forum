@@ -20,6 +20,7 @@ class UserCtrl {
     }
     
     function validateUser(){
+        $this->form->id = ParamUtils::getFromRequest('id',true,'Błędne wywołanie aplikacji');
         $this->form->name = ParamUtils::getFromRequest('name',true,'Błędne wywołanie aplikacji');
         $this->form->surname = ParamUtils::getFromRequest('surname',true,'Błędne wywołanie aplikacji');
         $this->form->login = ParamUtils::getFromRequest('login',true,'Błędne wywołanie aplikacji');
@@ -97,7 +98,7 @@ class UserCtrl {
                 
                }
                else{
-                App::getDB()->update("person", [
+                App::getDB()->update("account", [
                      "first_name" => $this->form->name,
                      "last_name" => $this->form->surname,
                      "login" => $this->form->login,

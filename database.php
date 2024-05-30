@@ -1,29 +1,14 @@
 <?php
 
 require_once 'lib/Medoo/Medoo.php';
+require_once 'core/App.class.php';
 
-use Medoo\Medoo;
-
-//Create database "AA_forum" manually, tables are created automatically
-
-$database = new \Medoo\Medoo([
-    'database_type' => $conf->db_type,
-    'database_name' => $conf->db_name,
-    'server' => $conf->db_server,
-    'username' => $conf->db_user,
-    'password' => $conf->db_pass,
-    'charset' => $conf->db_charset,
-    //'collation' => $conf->db_charset,
-    'option' => [
-        $conf->db_option
-    ]
-]);
-
-// 'utf8_polish_ci';
+use core\App;
+//use Medoo\Medoo;
 
 //DATABASE DEFINITION
 /*
-$database->create("account", [
+App::getDB()->create("account", [
     "id" => [
             "INT",
             "NOT NULL",
@@ -52,4 +37,25 @@ $database->create("account", [
     ]
 ]);
 
+
+App::getDB()->create("post", [
+  "id" => [
+    "INT",
+    "NOT NULL",
+    "AUTO_INCREMENT",
+    "PRIMARY KEY"
+  ],
+  "title" => [
+          "VARCHAR(100)",
+          "NOT NULL"
+  ],
+  "contents" => [
+          "VARCHAR(1000)",
+          "NOT NULL"
+  ],
+  "author_id" => [
+    "INT",
+    "NOT NULL"
+  ]
+]);
 */

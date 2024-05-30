@@ -33,3 +33,5 @@ else $conf->action_root = $conf->app_root.'/index.php?'.$conf->action_param.'=';
 $conf->action_url = $conf->server_url.$conf->action_root;
 
 App::createAndInitialize($conf);
+
+//include 'database.php';

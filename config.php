@@ -19,6 +19,5 @@ $conf->db_port = '3306';
 #$conf->db_prefix = '';
 $conf->db_option = [ PDO::ATTR_CASE => PDO::CASE_NATURAL, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ];
 
-//include 'database.php';
 
 

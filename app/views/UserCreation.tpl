@@ -9,7 +9,7 @@
         <table class="pure-table">
         <tr>
             <td><label for="name">Imie </label></td>
-            <td><input id="name" type="text" name="name" {if !empty($form->title)}value="{$form->name}"{/if}/></td>
+            <td><input id="name" type="text" name="name" {if !empty($form->name)}value="{$form->name}"{/if}/></td>
         </tr>
 	
         <tr>
@@ -40,7 +40,7 @@
         
         <tr>
             <td/>
-            <td><input type="submit" value="Utwórz" /></td>
+            <td><input type="submit" value="Zapisz" /></td>
         </tr>
     </table>
     </form>

@@ -12,7 +12,12 @@ Utils::addRoute('listUsers', 'UserCtrl');
 Utils::addRoute('editUserDisplay', 'UserCtrl');
 Utils::addRoute('editUser', 'UserCtrl');
 Utils::addRoute('deleteUser', 'UserCtrl');
-//Utils::addRoute('addPost', 'ForumCtrl');
+Utils::addRoute('addPostDisplay', 'ForumCtrl');
+Utils::addRoute('addPost', 'ForumCtrl');
+Utils::addRoute('listPosts', 'ForumCtrl');
+Utils::addRoute('editPostDisplay', 'ForumCtrl');
+Utils::addRoute('editPost', 'ForumCtrl');
+Utils::addRoute('viewPost', 'ForumCtrl');
 //Utils::addRoute('action_name', 'controller_class_name');
 
 //

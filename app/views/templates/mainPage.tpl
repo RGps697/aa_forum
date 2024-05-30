@@ -10,8 +10,11 @@
 <body>
     
 <div class="pure-menu pure-menu-horizontal bottom-margin">
-	<a href="{$conf->action_root}listUsers" class="pure-menu-heading pure-menu-link">Lista</a>
+	<a href="{$conf->action_root}listUsers" class="pure-menu-heading pure-menu-link">Użytkownicy</a>
         <a href="{$conf->action_root}addUserDisplay" class="pure-menu-heading pure-menu-link">Dodaj użytkownika</a>
+        <a href="{$conf->action_root}listPosts" class="pure-menu-heading pure-menu-link">Wpisy</a>
+        <a href="{$conf->action_root}addPostDisplay" class="pure-menu-heading pure-menu-link">Utwórz wpis</a>
+
 {if count($conf->roles)>0}
 	<a href="{$conf->action_root}logout" class="pure-menu-heading pure-menu-link">Wyloguj</a>
 {else}	
