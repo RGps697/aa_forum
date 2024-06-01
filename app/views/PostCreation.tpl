@@ -1,7 +1,7 @@
 {extends file="mainPage.tpl"}
 
 {block name=content}
-        
+            
     <form action="{$conf->action_url}addPost" method="post">
             
         <input type="hidden" name="id" value="{$form->id}">

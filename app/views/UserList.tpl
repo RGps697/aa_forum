@@ -1,7 +1,8 @@
 {extends file="mainPage.tpl"}
 
 {block name=content}
-        
+    
+    <a href="{$conf->action_root}addUserDisplay" class="pure-button" style="margin-bottom: 1em;">Dodaj użytkownika</a>
     <table id="tab_people" class="pure-table pure-table-bordered">
     <thead>
             <tr>
