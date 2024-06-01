@@ -47,7 +47,8 @@ class CommentCtrl {
                 
                App::getDB()->insert("comment", [
                     "contents" => $this->form->contents,
-                    "post_id" => $this->form->postId
+                    "post_id" => $this->form->postId,
+                    "author_id" => App::getConf()->user
                 ]);
                
                 Utils::addInfoMessage('Udane zapisanie rekordu');

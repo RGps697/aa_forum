@@ -5,7 +5,7 @@
             <url>app/controllers/UserCtrl.class.php</url>
             <bookmark id="1">
                 <name/>
-                <line>75</line>
+                <line>91</line>
                 <key/>
             </bookmark>
         </file>
@@ -13,18 +13,25 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/UserList.tpl</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/controllers/LoginCtrl.class.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/Config.class.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/PostList.tpl</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/controllers/CommentCtrl.class.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/ViewPost.tpl</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/forms/LoginForm.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/forms/ForumForm.class.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/RoleUtils.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/routing.php</file>
-            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/ParamUtils.class.php</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/LoginPage.tpl</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/App.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/UserCreation.tpl</file>
-            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/Utils.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/init.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/controllers/UserCtrl.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/database.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/controllers/ForumCtrl.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/forms/UserForm.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/templates/mainPage.tpl</file>
+            <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/core/Router.class.php</file>
             <file>file:/H:/US/Stopien_2/2_semestr/AA/projekty/zaliczenie/app/views/PostCreation.tpl</file>
         </group>
     </open-files>

@@ -9,6 +9,12 @@ namespace core;
  */
 class RoleUtils {
 
+    // set user ID
+    public static function setUser($user){
+        App::getConf()->user = $user;
+        $_SESSION['user'] = $user;
+    }
+    
     public static function addRole($role) {
         App::getConf()->roles [$role] = true;
         $_SESSION['_amelia_roles'] = serialize(App::getConf()->roles);

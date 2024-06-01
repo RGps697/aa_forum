@@ -20,6 +20,7 @@ class UserCtrl {
     }
     
     function validateUser(){
+        
         $this->form->id = ParamUtils::getFromRequest('id',true,'Błędne wywołanie aplikacji');
         $this->form->name = ParamUtils::getFromRequest('name',true,'Błędne wywołanie aplikacji');
         $this->form->surname = ParamUtils::getFromRequest('surname',true,'Błędne wywołanie aplikacji');
@@ -36,12 +37,26 @@ class UserCtrl {
         if (empty(trim($this->form->login))) {
                 Utils::addErrorMessage('Wprowadź login');
         }
+        else{
+            
+            $count = App::getDB()->count("account", "*", [
+                "login" => $this->form->login
+            ]);
+
+            if ($count > 0){
+                Utils::addErrorMessage('Błędny login');
+            }
+                            
+        }
         if (empty(trim($this->form->password))) {
                 Utils::addErrorMessage('Wprowadź hasło');
         }
         if (empty(trim($this->form->role))) {
                 Utils::addErrorMessage('Brak roli użytkownika');
         }
+        
+        
+        
 
         if ( App::getMessages()->isError() ) return false;
 
@@ -63,7 +78,7 @@ class UserCtrl {
 
         App::getSmarty()->assign('form', $this->form);
        
-       App::getSmarty()->display('UserCreation.tpl');
+        App::getSmarty()->display('UserCreation.tpl');
        
   
     }
@@ -75,14 +90,12 @@ class UserCtrl {
         
        if ($this->validateUser()){
            
-           
            try{
                $role = "user";
                
                if($this->form->role == "admin"){
                    $role = "admin";
                }
-               
                
                if ($this->form->id == '') {
                

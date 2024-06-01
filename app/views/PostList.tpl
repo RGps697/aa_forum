@@ -7,6 +7,7 @@
     <thead>
             <tr>
                     <th>Tytuł</th>
+                    <th>Autor</th>
                     <th>Opcje</th>
             </tr>
     </thead>
@@ -15,6 +16,7 @@
     {strip}
             <tr>
                     <td>{$p["title"]}</td>
+                    <td>{$p["login"]}</td>
                     <td>
                             <a class="button-small pure-button button-secondary" href="{$conf->action_url}viewPost/{$p['id']}">Wyświetl</a>
                             &nbsp;

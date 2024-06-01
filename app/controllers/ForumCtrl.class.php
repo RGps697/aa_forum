@@ -61,7 +61,8 @@ class ForumCtrl {
             if ($this->form->id == '') {
                 App::getDB()->insert("post", [
                      "title" => $this->form->title,
-                     "contents" => $this->form->contents
+                     "contents" => $this->form->contents,
+                     "author_id" => App::getConf()->user
                  ]);
 
                  Utils::addInfoMessage('Wpis został utworzony');
@@ -125,9 +126,12 @@ class ForumCtrl {
     public function action_listPosts(){
         
         try {
-            $this->posts = App::getDB()->select("post", [
-                    "id",
-                    "title"
+            $this->posts = App::getDB()->select("post",[
+                    "[>]account" => ["author_id" => "id"]
+                    ], [
+                    "post.id",
+                    "post.title",
+                    "account.login"
                 ]);
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
@@ -154,8 +158,11 @@ class ForumCtrl {
                 $this->form->title = $record['title'];
                 $this->form->contents = $record['contents'];
                 
-                $this->comments = App::getDB()->select("comment", [
-                    "contents"
+                $this->comments = App::getDB()->select("comment",[
+                        "[>]account" => ["author_id" => "id"]
+                        ], [
+                    "contents",
+                    "login"
                 ],[
                      "post_id" => $this->form->id
                  ]

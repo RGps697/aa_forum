@@ -3,22 +3,24 @@
 use core\App;
 use core\Utils;
 
-App::getRouter()->setDefaultRoute('addUserDisplay'); #default action
-//App::getRouter()->setLoginRoute('login'); #action to forward if no permissions
+App::getRouter()->setDefaultRoute('login'); #default action
+App::getRouter()->setLoginRoute('login'); #action to forward if no permissions
 
-Utils::addRoute('addUserDisplay', 'UserCtrl');
-Utils::addRoute('addUser', 'UserCtrl');
-Utils::addRoute('listUsers', 'UserCtrl');
-Utils::addRoute('editUserDisplay', 'UserCtrl');
-Utils::addRoute('editUser', 'UserCtrl');
-Utils::addRoute('deleteUser', 'UserCtrl');
-Utils::addRoute('addPostDisplay', 'ForumCtrl');
-Utils::addRoute('addPost', 'ForumCtrl');
-Utils::addRoute('listPosts', 'ForumCtrl');
-Utils::addRoute('editPostDisplay', 'ForumCtrl');
-Utils::addRoute('editPost', 'ForumCtrl');
-Utils::addRoute('viewPost', 'ForumCtrl');
-Utils::addRoute('addComment', 'CommentCtrl');
+Utils::addRoute('addUserDisplay', 'UserCtrl', ['admin']);
+Utils::addRoute('addUser', 'UserCtrl', ['admin']);
+Utils::addRoute('listUsers', 'UserCtrl', ['admin']);
+Utils::addRoute('editUserDisplay', 'UserCtrl', ['admin']);
+Utils::addRoute('editUser', 'UserCtrl', ['admin']);
+Utils::addRoute('deleteUser', 'UserCtrl', ['admin']);
+Utils::addRoute('addPostDisplay', 'ForumCtrl', ['user', 'admin']);
+Utils::addRoute('addPost', 'ForumCtrl', ['user', 'admin']);
+Utils::addRoute('listPosts', 'ForumCtrl', ['user', 'admin']);
+Utils::addRoute('editPostDisplay', 'ForumCtrl', ['admin']);
+Utils::addRoute('editPost', 'ForumCtrl', ['admin']);
+Utils::addRoute('viewPost', 'ForumCtrl', ['user', 'admin']);
+Utils::addRoute('addComment', 'CommentCtrl', ['user', 'admin']);
+Utils::addRoute('login', 'LoginCtrl');
+Utils::addRoute('logout', 'LoginCtrl');
 //Utils::addRoute('action_name', 'controller_class_name');
 
 //

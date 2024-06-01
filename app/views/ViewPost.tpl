@@ -25,7 +25,8 @@
         <div>
             {foreach $comments as $c}
             {strip}
-                <div>
+                <label for="contents">{$c["login"]}: </label>
+                <div id="contents">
                     {$c["contents"]}
                 </div>
             {/strip}

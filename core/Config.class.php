@@ -12,6 +12,7 @@ class Config extends \ArrayObject{
 	public $action_script;
 	public $action_root;
 	public $action_url;
+        public $user;
 	public $roles;
 	public $db_type;
 	public $db_server;
